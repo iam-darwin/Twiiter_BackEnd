@@ -5,11 +5,7 @@ const tweetSchema=new mongoose.Schema({
         type:String,
         required:true,
         max:[250,"Only 250 chars allowed"]
-    },
-    hashTag:[{
-        type: mongoose.Schema.Types.ObjectId,
-        ref:'HashTag'
-    }]
+    }
 })
 
 
