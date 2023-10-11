@@ -10,6 +10,7 @@ class TweetRepository{
             throw {error}
         }
     }
+
 }
 
 module.exports=TweetRepository
