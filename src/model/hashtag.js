@@ -1,18 +1,17 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const HashTagSchema=new mongoose.Schema({
-    title:{
-        type:String,
-        required:true,
-        unique:true
+const HashTagSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true,
+        unique: true,
     },
-    Tweets:[{
+    Tweets: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref:'Tweet'
-    }]
-})
+        ref: 'Tweet',
+    }],
+});
 
+const HashTag = mongoose.model('HashTag', HashTagSchema);
 
-const HashTag=mongoose.model('HashTag',HashTagSchema);
-
-module.exports=HashTag
+export default HashTag;

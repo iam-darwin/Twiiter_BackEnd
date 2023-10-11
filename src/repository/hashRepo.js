@@ -1,38 +1,36 @@
-const HashTag = require("../model/hashtag");
+import HashTag from '../model/hashtag.js';
 
-class HashTagRepository{
-
-    async create(data){
+class HashTagRepository {
+    async create(data) {
         try {
-            const hashTag= await HashTag.create(data);
+            const hashTag = await HashTag.create(data);
             return hashTag;
         } catch (error) {
-            throw {error}
+            throw { error };
         }
     }
 
-    async findMany(titlesToFind){
+    async findMany(titlesToFind) {
         try {
-            const tweetsInfo=await HashTag.find({
-                title:{
-                    $in: titlesToFind
-                }
-            })
+            const tweetsInfo = await HashTag.find({
+                title: {
+                    $in: titlesToFind,
+                },
+            });
             return tweetsInfo;
         } catch (error) {
-            throw {error}
+            throw { error };
         }
     }
 
-    async bulkCreate(array){
+    async bulkCreate(array) {
         try {
-            const data=await HashTag.insertMany(array);
+            const data = await HashTag.insertMany(array);
             return data;
         } catch (error) {
-            throw {error}
+            throw { error };
         }
     }
-
 }
 
-module.exports=HashTagRepository
+export default HashTagRepository;

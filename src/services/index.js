@@ -1,3 +1,3 @@
-module.exports={
-    TweetService:require("./tweetService")
-}
+import TweetService from "./tweetService.js"
+
+export {TweetService}

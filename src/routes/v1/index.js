@@ -1,9 +1,8 @@
-const express =require("express");
+import express from 'express';
+import {create} from '../../controllers/tweetController.js';
 
-const tweetController=require("../../controllers/tweetController")
+const router = express.Router();
 
-const router=express.Router();
+router.post('/tweets', create);
 
-router.post("/tweets",tweetController.create)
-
-module.exports=router
+export default router;
