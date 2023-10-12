@@ -1,6 +1,9 @@
 import express from 'express';
 import connectDb from './config/database.js';
 import apiRoutes from './routes/index.js';
+import UserRepository from './repository/userRepo.js';
+import LikeRepository from './repository/likeRepo.js';
+import {LikeService,TweetService} from './services/index.js';
 
 
 const app = express();

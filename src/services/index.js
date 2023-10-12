@@ -1,3 +1,3 @@
 import TweetService from "./tweetService.js"
-
-export {TweetService}
+import LikeService from "./likeService.js"
+export {TweetService,LikeService}

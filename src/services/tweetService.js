@@ -36,6 +36,16 @@ class TweetService {
             throw { error };
         }
     }
+
+    async getAll(){
+        try {
+            const data=await this.tweetRepo.getAll();
+            return data;
+        } catch (error) {
+            console.log('Srevice layer');
+            throw {error}
+        }
+    }
 }
 
 export default TweetService;
