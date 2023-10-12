@@ -2,7 +2,7 @@ import { TweetService } from '../services/index.js';
 
 const tweetService = new TweetService();
 
-const create = async (req, res) => {
+const createTweet = async (req, res) => {
     try {
         console.log(req.body);
         const response = await tweetService.create(req.body);
@@ -21,4 +21,4 @@ const create = async (req, res) => {
     }
 }
 
-export { create };
+export { createTweet };

@@ -14,7 +14,7 @@ class LikeService{
             var likeAble=await this.tweetRepo.getId(modelId);
             console.log("Likebale",likeAble);
         }else if(modelType=='Comment'){
-
+            
         }else{
             throw new Error("Type error")
         }
@@ -24,7 +24,6 @@ class LikeService{
             onModel:modelType,
             likeable:modelId
         })
-        console.log(exists);
 
         if(exists){
             await this.likeRepo.deleteExistingLike({
@@ -36,7 +35,6 @@ class LikeService{
             await likeAble.save();
             var isAdded=false;
         }else{
-            console.log("im here");
             const data=await this.likeRepo.create({
                 userId:userId,
                 onModel:modelType,
@@ -46,7 +44,6 @@ class LikeService{
             await likeAble.save()
             var isAdded=true;
         }   
-
         return isAdded;
     }
 
