@@ -4,8 +4,9 @@ const likeService = new LikeService();
 
 const createLike = async (req, res) => {
     try {
-        console.log(req.body);//modelId,modelType,userId
-        const response = await likeService.toggleLike(req.query.modelId,req.query.modelType,req.body.userId);
+        console.log("Body",req.user.id);//modelId,modelType,userId
+        console.log("user object",req.user);
+        const response = await likeService.toggleLike(req.query.modelId,req.query.modelType,req.user.id);
         return res.status(201).json({
             message: 'Like Added',
             data: response,

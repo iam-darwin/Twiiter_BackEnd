@@ -5,7 +5,7 @@ const commentService = new CommentService();
 const createComment = async (req, res) => {
     try {
         //modelId,modelType,userId,content
-        const response = await commentService.commentOnTweetOrComment(req.query.modelId,req.query.modelType,req.body.userId,req.body.content)
+        const response = await commentService.commentOnTweetOrComment(req.query.modelId,req.query.modelType,req.user.userId,req.body.content)
         return res.status(201).json({
             message: 'Comment Added',
             data: response,
