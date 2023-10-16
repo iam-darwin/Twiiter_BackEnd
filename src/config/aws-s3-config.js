@@ -5,7 +5,6 @@ import multerS3 from "multer-s3";
 
 dotEnv.config();
 
-console.log(process.env.ACCESS_KEY);
 AWS.config.update({
   accessKeyId: process.env.AWS_KEY,
   secretAccessKey: process.env.AWS_SECRET,
