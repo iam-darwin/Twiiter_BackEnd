@@ -6,7 +6,7 @@ class HashTagRepository {
             const hashTag = await HashTag.create(data);
             return hashTag;
         } catch (error) {
-            throw { error };
+            throw new Error("Something went wrong on Repo layer");
         }
     }
 
