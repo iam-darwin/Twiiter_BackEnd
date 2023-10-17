@@ -19,7 +19,7 @@ class HashTagRepository {
             });
             return tweetsInfo;
         } catch (error) {
-            throw { error };
+            throw new Error("Something went wrong on Repo layer");
         }
     }
 
@@ -28,7 +28,7 @@ class HashTagRepository {
             const data = await HashTag.insertMany(array);
             return data;
         } catch (error) {
-            throw { error };
+            throw new Error("Something went wrong on Repo layer");
         }
     }
 }

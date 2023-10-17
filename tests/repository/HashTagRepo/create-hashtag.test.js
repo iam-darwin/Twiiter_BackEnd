@@ -1,7 +1,7 @@
-import HashTag from "../../src/model/hashtag.js";
-import HashTagRepository from "../../src/repository/hashRepo";
+import HashTag from "../../../src/model/hashtag.js";
+import HashTagRepository from "../../../src/repository/hashRepo.js";
 
-jest.mock("../../src/model/hashtag.js");
+jest.mock("../../../src/model/hashtag.js");
 
 describe("Testing create Hashtag", () => {
   test("should create a hashTag and return it", async () => {
